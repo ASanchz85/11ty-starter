@@ -1,7 +1,5 @@
 # Eleventy - 11ty - starter-kit
 
-1:31
-
 [11ty](https://www.11ty.dev/) is a minimalist, SEO friendly, agnostic and very fast way to create static sites ([SSG]((https://dev.to/martygo/exploring-the-differences-between-ssr-ssg-csr-and-isr-which-is-the-best-approach-43a3))) using markdowns and engine templates within JS ecosystem. As they said in their own website, Eleventy is known for both its lightweight core in the form of speedy installs/builds and lightweight site output in the form of speedy sites!. You can check other options at [Jamstack](https://jamstack.org/).
 
 The **purpose** of this project is to be used as a starter point to enable **web develpment at light speed**.
