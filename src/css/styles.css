@@ -12,6 +12,11 @@ html {
   background: url('/assets/bg.jpg') repeat center center/cover;
 }
 
+p:has(img) {
+  display: flex;
+  justify-content: center;
+}
+
 hr {
   border: 0;
   height: 1px;
@@ -74,6 +79,16 @@ hr {
   object-fit: contain;
 }
 
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
 .center-navbar {
   width: 600px;
+}
+
+.center-navbar > h1 {
+  text-align: center;
 }

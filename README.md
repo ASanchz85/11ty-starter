@@ -321,6 +321,49 @@ touch src/_data/linksData.json
 ]
 ```
 
+- For enhancing 11ty capabilities, we can set our own Nunjucks pipes to apply some js logic to our page placing it within our .eleventy.js. For example, to format dates.
+
+```js
+  eleventyConfig.addFilter('simpleDate', (dateObj) => {
+    return new Date(dateObj).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    })
+  })
+```
+
+- Finally, we need to deploy our project. In this example, using Github pages. For doing so, we need to add some extra settings to our project. Our .eleventy.js file will look as following:
+
+```js
+const { EleventyHtmlBasePlugin } = require('@11ty/eleventy')
+
+module.exports = function (eleventyConfig) {
+  eleventyConfig.addPassthroughCopy('src/assets')
+  eleventyConfig.addPassthroughCopy('src/css')
+  eleventyConfig.addPassthroughCopy('src/js')
+  eleventyConfig.addPlugin(EleventyHtmlBasePlugin)
+  eleventyConfig.addFilter('simpleDate', (dateObj) => {
+    return new Date(dateObj).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    })
+  })
+
+  return {
+    dir: {
+      input: 'src',
+      output: 'dist'
+    }
+  }
+}
+```
+
+```sh
+npm run deploy
+```
+
 - Up to this point, it is time to fly alone. Hopefully, the hints given above were useful to you. Anyhow, is highly recommended to check 11ty and Nunjucks docs from now on.
 
 *Happy coding!*

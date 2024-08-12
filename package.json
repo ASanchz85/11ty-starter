@@ -7,7 +7,7 @@
     "dev": "eleventy --serve",
     "clean": "rm -rf dist",
     "build": "npm run clean && eleventy",
-    "deploy": "npm run build && npx gh-pages -d dist"
+    "deploy": "npm run build --pathprefix=/subdirectory/ && npx gh-pages -d dist"
   },
   "keywords": [],
   "author": "ASanchz85",
